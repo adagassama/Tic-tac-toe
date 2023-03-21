@@ -5,22 +5,19 @@ pipeline {
         stage('Build') {
             steps {
                 // Build your application here
-                //sh 'npm install'
-                //sh 'npm run build'
-                echo 'Building'
+                sh 'npm install'
+                sh 'npm run build'
             }
         }
         
         stage('Deploy to Production') {
-            //when {
-                //changeset "refs/remotes/origin/main"
-            //}
+            when {
+                changeset "refs/remotes/origin/main"
+            }
             steps {
                 // Deploy your application to production here
-                //sh 'mkdir -p production'
-                //sh 'cp -R dist/* production/'
-                echo 'Deploying ...'
-                echo 'Done'
+                sh 'mkdir -p production'
+                sh 'cp -R build/* production/'
             }
         }
     }

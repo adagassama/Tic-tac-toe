@@ -8,36 +8,17 @@ exports[`renders learn react link 1`] = `
     <button
       class="square"
     >
-      1
+      value
     </button>
     <button
       class="square"
     >
-      2
+      value
     </button>
     <button
       class="square"
     >
-      3
-    </button>
-  </div>
-  <div
-    class="board-row"
-  >
-    <button
-      class="square"
-    >
-      4
-    </button>
-    <button
-      class="square"
-    >
-      5
-    </button>
-    <button
-      class="square"
-    >
-      6
+      value
     </button>
   </div>
   <div
@@ -46,17 +27,36 @@ exports[`renders learn react link 1`] = `
     <button
       class="square"
     >
-      7
+      value
     </button>
     <button
       class="square"
     >
-      8
+      value
     </button>
     <button
       class="square"
     >
-      9
+      value
+    </button>
+  </div>
+  <div
+    class="board-row"
+  >
+    <button
+      class="square"
+    >
+      value
+    </button>
+    <button
+      class="square"
+    >
+      value
+    </button>
+    <button
+      class="square"
+    >
+      value
     </button>
   </div>
 </div>

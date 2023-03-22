@@ -1,70 +1,88 @@
-# Getting Started with Create React App
+# `TIC TAC TOE`
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+En partant du framework React nous avons progressivement intégrer les éléments fonctionnels de l’application Tictactoe et mis en place un système de déploiement automatique via jenkins en suivant les contraintes du CI/CD.
 
-## Available Scripts
+## `Contributeurs:`
 
-In the project directory, you can run:
+**GASSAMA Adama**
 
-### `npm start`
+**DIALLO Souleymane**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**CONTE Kankou** 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## `Stack Utilisés:`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    •   REACT est le framework dans lequel le projet est réalisé. 
 
-### `npm run build`
+    •	Jenkins est responsable du build vers un dossier local qui sera la simulation de notre dossier de production.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    •	Git est responsable du versionning du projet.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    •	GitHub héberge le Repo de notre projet.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## `Étape 1: Set up de repository`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Pour ce projet 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    •	Nous avons initialisé un nouveau Repo Git avec un projet React vide
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    •	Nous avons ajouté tous les contributeurs nécessaires au projet
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+## `Étape 2 : Création des Branches`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Dans le cadre d’une intégration en continue :
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    •	Notre stratégie est de mettre en place un Repo git avec une branche principale appelé `main ` qui est géré par l’intégration manager
 
-### Code Splitting
+    •	 Ensuite nous avons crée une seconde branche `develop` qui est la branche sur laquelle chaque contributeur tirera un topic pour chaque feature (nouvelle fonctionnalité), pour la fixation de chaque bug, pour le factoring du code et pour la documentation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+    •	 Dans le respect de la méthodologie Agile, imaginons dans le futur d’autres collaborateurs rejoignent notre équipe de développeurs, l’intégration Manager leurs donneront accès à la branche `develop` et ils pourront créer leurs topics sans pour autant toucher la branche `main` 
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## `Étape 3 : Ajout de la première fonctionnalité`
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Comme demander dans le TP,
 
-### Advanced Configuration
+    •	Nous avons commencé à mettre en place les premières fonctionnalités du tutoriel tictactoe
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+    •	Pour le déploiement, un développeur met en place le code et le publie
 
-### Deployment
+    •	L’intégrateur manager valide selon les règle mises en place
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+## `Étape 4 : Configuration Jenkins et connexion avec git`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Pour la mise en place des pipelines dans Jenkins, nous avons procéder en plusieurs étape
+
+**1 - Installation Jenkins :**
+
+    •	Télécharger le fichier War se trouvant sur le site de Jenkins
+
+    •	Installer java et vérifier la version
+
+**2 - Couplage Jenkins et notre Repo Git**
+
+    •	Nous avons créé un Personnal Acces Token pour la génération de nos futures clés publiques et privées
+
+    •	Nous avons configuré notre Jenkins Administer en création notre crédentiel
+
+    •	 Ajouter les informations (nom et url) de notre repo git dans la section gitHub de Jenkins
+
+**3 - Création de notre pipeline**
+
+En fonction de besoin, nous avons mis en place un script avec 3 stages
+
+    •	Build: ce stage contient les informations nécessaires pour le build de notre projet 
+
+    •	Deploy to Production : ce stage crée un dossier production et y ajoute le contenu de tous les fichiers du dossier build.
+
+    •	Notification : ce stage contient le message de notification dans le cas où le déploiement se passe avec succès et crée un tag à la fin
+
+
+## `Testing`
+
+Dans le cadre du CI/CD, nous avons mis en place un sytème de testing

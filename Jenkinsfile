@@ -18,5 +18,12 @@ pipeline {
                 sh 'cp -R build/* production/'
             }
         }
+
+        stage('Notification') {
+            steps {
+                sh 'git tag -a DEPLOYED -m "Application successfully deployed"'
+                sh 'git push origin DEPLOYED'
+            }
+        }
     }
 }

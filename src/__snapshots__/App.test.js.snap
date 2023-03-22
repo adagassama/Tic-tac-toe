@@ -7,5 +7,10 @@ exports[`renders learn react link 1`] = `
   >
     X
   </button>
+  <button
+    class="square"
+  >
+    X
+  </button>
 </div>
 `;

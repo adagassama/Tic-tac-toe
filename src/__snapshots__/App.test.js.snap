@@ -56,7 +56,13 @@ exports[`renders learn react link 1`] = `
     <div
       class="game-info"
     >
-      <ol />
+      <ol>
+        <li>
+          <button>
+            Go to game start
+          </button>
+        </li>
+      </ol>
     </div>
   </div>
 </div>

@@ -3,48 +3,61 @@
 exports[`renders learn react link 1`] = `
 <div>
   <div
-    class="status"
+    class="game"
   >
-    Next player: X
-  </div>
-  <div
-    class="board-row"
-  >
-    <button
-      class="square"
-    />
-    <button
-      class="square"
-    />
-    <button
-      class="square"
-    />
-  </div>
-  <div
-    class="board-row"
-  >
-    <button
-      class="square"
-    />
-    <button
-      class="square"
-    />
-    <button
-      class="square"
-    />
-  </div>
-  <div
-    class="board-row"
-  >
-    <button
-      class="square"
-    />
-    <button
-      class="square"
-    />
-    <button
-      class="square"
-    />
+    <div
+      class="game-board"
+    >
+      <div
+        class="status"
+      >
+        Next player: X
+      </div>
+      <div
+        class="board-row"
+      >
+        <button
+          class="square"
+        />
+        <button
+          class="square"
+        />
+        <button
+          class="square"
+        />
+      </div>
+      <div
+        class="board-row"
+      >
+        <button
+          class="square"
+        />
+        <button
+          class="square"
+        />
+        <button
+          class="square"
+        />
+      </div>
+      <div
+        class="board-row"
+      >
+        <button
+          class="square"
+        />
+        <button
+          class="square"
+        />
+        <button
+          class="square"
+        />
+      </div>
+    </div>
+    <div
+      class="game-info"
+    >
+      <ol />
+    </div>
   </div>
 </div>
 `;
